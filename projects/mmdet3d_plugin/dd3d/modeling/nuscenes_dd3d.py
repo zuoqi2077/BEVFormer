@@ -310,7 +310,7 @@ class NuscenesInference():
                     instances_lvl[i].pred_speeds = speed_per_im
 
 
-@HEADS.register_module()
+@HEADS.register_module(force=True)
 class NuscenesDD3D(DD3D):
     def __init__(self, 
                  num_classes,

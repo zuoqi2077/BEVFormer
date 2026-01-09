@@ -17,7 +17,7 @@ import mmdet3d
 from projects.mmdet3d_plugin.models.utils.bricks import run_time
 
 
-@DETECTORS.register_module()
+@DETECTORS.register_module(force=True)
 class BEVFormer(MVXTwoStageDetector):
     """BEVFormer.
     Args:

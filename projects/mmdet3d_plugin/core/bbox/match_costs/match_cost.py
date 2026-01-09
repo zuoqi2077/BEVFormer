@@ -3,7 +3,7 @@ import mmcv
 from mmdet.core.bbox.match_costs.builder import MATCH_COST
 
 
-@MATCH_COST.register_module()
+@MATCH_COST.register_module(force=True)
 class BBox3DL1Cost(object):
     """BBox3DL1Cost.
      Args:
@@ -50,7 +50,7 @@ def smooth_l1_loss(pred, target, beta=1.0):
     return loss.sum(-1)
 
 
-@MATCH_COST.register_module()
+@MATCH_COST.register_module(force=True)
 class SmoothL1Cost(object):
     """SmoothL1Cost.
      Args:

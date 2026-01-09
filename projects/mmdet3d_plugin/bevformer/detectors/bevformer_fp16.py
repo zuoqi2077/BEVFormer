@@ -19,7 +19,7 @@ import mmdet3d
 from projects.mmdet3d_plugin.models.utils.bricks import run_time
 
 
-@DETECTORS.register_module()
+@DETECTORS.register_module(force=True)
 class BEVFormer_fp16(BEVFormer):
     """
     The default version BEVFormer currently can not support FP16. 

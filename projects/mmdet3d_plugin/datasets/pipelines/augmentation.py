@@ -6,7 +6,7 @@ from PIL import Image
 import random
 
 
-@PIPELINES.register_module()
+@PIPELINES.register_module(force=True)
 class CropResizeFlipImage(object):
     """Fixed Crop and then randim resize and flip the image. Note the flip requires to flip the feature in the network   
     ida_aug_conf = {
@@ -201,7 +201,7 @@ class CropResizeFlipImage(object):
         return resize, resize_dims, crop, flip
 
 
-@PIPELINES.register_module()
+@PIPELINES.register_module(force=True)
 class GlobalRotScaleTransImage(object):
     """Random resize, Crop and flip the image
     Args:

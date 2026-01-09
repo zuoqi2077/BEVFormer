@@ -17,7 +17,7 @@ from mmdet3d.datasets.pipelines import Compose
 from mmdet3d.datasets.utils import extract_result_dict, get_loading_pipeline
 
 
-@DATASETS.register_module()
+@DATASETS.register_module(force=True)
 class CustomNuScenesMonoDataset(CocoDataset):
     r"""Monocular 3D detection on NuScenes Dataset.
     This class serves as the API for experiments on the NuScenes Dataset.

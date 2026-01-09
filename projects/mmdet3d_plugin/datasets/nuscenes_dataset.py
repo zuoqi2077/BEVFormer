@@ -15,7 +15,7 @@ from mmcv.parallel import DataContainer as DC
 import random
 
 
-@DATASETS.register_module()
+@DATASETS.register_module(force=True)
 class CustomNuScenesDataset(NuScenesDataset):
     r"""NuScenes Dataset.
 

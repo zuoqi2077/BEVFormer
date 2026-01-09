@@ -8,7 +8,7 @@ from projects.mmdet3d_plugin.dd3d.structures.pose import Pose
 from projects.mmdet3d_plugin.dd3d.utils.tasks import TaskManager
 
 
-@PIPELINES.register_module()
+@PIPELINES.register_module(force=True)
 class DD3DMapper:
     def __init__(self,
                  is_train: bool = True,

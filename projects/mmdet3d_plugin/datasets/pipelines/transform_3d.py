@@ -4,7 +4,7 @@ import mmcv
 from mmdet.datasets.builder import PIPELINES
 from mmcv.parallel import DataContainer as DC
 
-@PIPELINES.register_module()
+@PIPELINES.register_module(force=True)
 class PadMultiViewImage(object):
     """Pad the multi-view image.
     There are two padding modes: (1) pad to a fixed size and (2) pad to the
@@ -58,7 +58,7 @@ class PadMultiViewImage(object):
         return repr_str
 
 
-@PIPELINES.register_module()
+@PIPELINES.register_module(force=True)
 class NormalizeMultiviewImage(object):
     """Normalize the image.
     Added key is "img_norm_cfg".
@@ -95,7 +95,7 @@ class NormalizeMultiviewImage(object):
         return repr_str
 
 
-@PIPELINES.register_module()
+@PIPELINES.register_module(force=True)
 class PhotoMetricDistortionMultiViewImage:
     """Apply photometric distortion to image sequentially, every transformation
     is applied with a probability of 0.5. The position of random contrast is in
@@ -196,7 +196,7 @@ class PhotoMetricDistortionMultiViewImage:
 
 
 
-@PIPELINES.register_module()
+@PIPELINES.register_module(force=True)
 class CustomCollect3D(object):
     """Collect data from the loader relevant to the specific task.
     This is usually the last stage of the data loader pipeline. Typically keys
@@ -288,7 +288,7 @@ class CustomCollect3D(object):
 
 
 
-@PIPELINES.register_module()
+@PIPELINES.register_module(force=True)
 class RandomScaleImageMultiViewImage(object):
     """Random scale the image
     Args:

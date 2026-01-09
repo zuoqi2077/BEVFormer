@@ -15,7 +15,7 @@ from pprint import pprint
 from mmcv.parallel.data_container import DataContainer
 
 
-@RUNNERS.register_module()
+@RUNNERS.register_module(force=True)
 class EpochBasedRunner_video(EpochBasedRunner):
     
     ''' 

@@ -24,7 +24,7 @@ from mmdet.models.utils import build_transformer
 from mmdet3d.models.builder import build_head
 from mmdet3d.models.dense_heads.free_anchor3d_head import FreeAnchor3DHead
 
-@HEADS.register_module()
+@HEADS.register_module(force=True)
 class BEVHead(BaseModule):
     def __init__(self, 
                  bev_h,
@@ -108,7 +108,7 @@ class BEVHead(BaseModule):
     def get_bboxes(self, ret, img_metas, rescale=False):
         return self.pts_bbox_head_3d.get_bboxes(ret['pred'], img_metas)
 
-@HEADS.register_module()
+@HEADS.register_module(force=True)
 class FreeAnchor3DHeadV2(FreeAnchor3DHead):
     @force_fp32(apply_to=('pred'))
     def loss(self,

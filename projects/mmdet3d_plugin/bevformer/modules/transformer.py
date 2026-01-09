@@ -23,7 +23,7 @@ from projects.mmdet3d_plugin.models.utils.bricks import run_time
 from mmcv.runner import force_fp32, auto_fp16
 
 
-@TRANSFORMER.register_module()
+@TRANSFORMER.register_module(force=True)
 class PerceptionTransformer(BaseModule):
     """Implements the Detr3D transformer.
     Args:

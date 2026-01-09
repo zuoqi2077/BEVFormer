@@ -15,7 +15,7 @@ from mmcv.cnn.bricks.registry import (ATTENTION, FEEDFORWARD_NETWORK, POSITIONAL
                                       TRANSFORMER_LAYER_SEQUENCE)
 
 
-@ATTENTION.register_module()
+@ATTENTION.register_module(force=True)
 class GroupMultiheadAttention(BaseModule):
     """A wrapper for ``torch.nn.MultiheadAttention``.
     This module implements MultiheadAttention with identity connection,

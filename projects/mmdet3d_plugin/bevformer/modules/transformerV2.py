@@ -51,7 +51,7 @@ class ResNetFusion(BaseModule):
         return x
 
 
-@TRANSFORMER.register_module()
+@TRANSFORMER.register_module(force=True)
 class PerceptionTransformerBEVEncoder(BaseModule):
     def __init__(self,
                  num_feature_levels=4,
@@ -173,7 +173,7 @@ class PerceptionTransformerBEVEncoder(BaseModule):
         return prev_bev
 
 
-@TRANSFORMER.register_module()
+@TRANSFORMER.register_module(force=True)
 class PerceptionTransformerV2(PerceptionTransformerBEVEncoder):
     """Implements the Detr3D transformer.
     Args:

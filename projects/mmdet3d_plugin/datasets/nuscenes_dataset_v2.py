@@ -12,7 +12,7 @@ from collections import defaultdict, OrderedDict
 from projects.mmdet3d_plugin.dd3d.datasets.nuscenes import NuscenesDataset as DD3DNuscenesDataset
 
 
-@DATASETS.register_module()
+@DATASETS.register_module(force=True)
 class CustomNuScenesDatasetV2(NuScenesDataset):
     def __init__(self, frames=(),mono_cfg=None, overlap_test=False,*args, **kwargs):
         super().__init__(*args, **kwargs)

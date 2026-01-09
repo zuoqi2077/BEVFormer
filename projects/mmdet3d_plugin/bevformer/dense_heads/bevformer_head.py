@@ -13,7 +13,7 @@ from projects.mmdet3d_plugin.core.bbox.util import normalize_bbox
 from mmcv.runner import force_fp32, auto_fp16
 
 
-@HEADS.register_module()
+@HEADS.register_module(force=True)
 class BEVFormerHead(DETRHead):
     """Head of Detr3D.
     Args:
@@ -509,7 +509,7 @@ class BEVFormerHead(DETRHead):
         return ret_list
 
 
-@HEADS.register_module()
+@HEADS.register_module(force=True)
 class BEVFormerHead_GroupDETR(BEVFormerHead):
     def __init__(self,
                  *args,

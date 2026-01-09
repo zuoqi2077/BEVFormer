@@ -14,7 +14,7 @@ from mmdet3d.models.builder import build_head
 from projects.mmdet3d_plugin.models.utils.grid_mask import GridMask
 
 
-@DETECTORS.register_module()
+@DETECTORS.register_module(force=True)
 class BEVFormerV2(MVXTwoStageDetector):
     """BEVFormer.
     Args:
