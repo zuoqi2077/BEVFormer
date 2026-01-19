@@ -43,6 +43,8 @@ class BEVFormer(MVXTwoStageDetector):
                  video_test_mode=False
                  ):
 
+        print("🚀 [Check] BEVFormer __init__ is called from Plugin!")
+        
         super(BEVFormer,
               self).__init__(pts_voxel_layer, pts_voxel_encoder,
                              pts_middle_encoder, pts_fusion_layer,
